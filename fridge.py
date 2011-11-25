@@ -1,74 +1,69 @@
 import json
 
+class fridge(object):
 
-def load():
-    try:
-        f = open("fridge.json","r")
-        fridge = json.load(f)
-        f.close()
-    except :
-        fridge = {}
-    return fridge
+    def __init__(self):
+        self.json = {}
 
-
-
-def open_fridge(product, action, amout):
-    if(not(fridge.has_key(product)) and action != "sub"):
-        fridge.update({product : 0})
-        add_product(product)
-    else:
-        if action == "add":
-            for i in range(amount):
-                add_product(product)
-            save(fridge)
-        elif action == "sub":
-            for i in range(amount):
-                sub_product(product)
-            save(fridge)
+    def open(self):
+        try:
+            f = open("fridge.json","r")
+            self.json = json.load(f)
+            f.close()
+        except:
+            self.json = {}
+    
+    def add(self, product, amount):
+        if self.json.has_key(product):
+            self.json[product] += amount
         else:
-            return "Command not recognised!"
+            self.json.update({product : 0})
+            self.add(product, amount)
 
-def add_product(product):
-    if fridge.has_key(product):
-        fridge[product] += 1
-    else:
-        fridge.update({product : 0})
-        add_product(product)
-    message = product + " added!"
-    return  message
+    def show(self):
+        print 'In the fridge, you have:'
+        if(len(self.json)) != 0:
+            for product in self.json:
+                print '\t+', product+':', self.json[product]
+        else:
+            print '\tNothing!'
 
-def sub_product(product):
-    if(fridge[product]>=1):
-        fridge[product] -= 1
-        message = product + " subtracted!"
-    else:
-        message = "No more product to subtract!"
-    return message
+    def close(self):
+        from StringIO import StringIO
+        jfridge = StringIO()
 
-def save(fridge):
-    from StringIO import StringIO
-    jfridge = StringIO()
+        json.dump(self.json, jfridge)
+        f = open("fridge.json", "w")
 
-    json.dump(fridge, jfridge)
-    f = open("fridge.json", "w")
+        #f.write(jfridge)
+        f.write(jfridge.getvalue())
+        f.close()
 
-    #f.write(jfridge)
-    f.write(jfridge.getvalue())
-    f.close()
-    return "saved!"
+        self.clear()
 
-def clear(fridge):
-    fridge.clear()
-    save(fridge)
+    def clear(self):
+        self.json.clear()
+    
+    def amountOf(self, product):
+        print product, "-->", self.json[product]
 
-
-def get_amount(product):
-    message = product, "-->", fridge[product]
-    return message
+    def sub(self, product):
+        if(self.json[product]>=1):
+            self.json[product] -= 1
 
 
-fridge = load()
-print "Fridge opened!"
+def shop(fridge):
+    fridge.add('Beer',6)
+    fridge.add('Coca Cola 1.5l',1)
+    fridge.add('Cheese',1)
 
 
 
+    
+
+
+
+# For testing purposes
+a = fridge()
+a.open()
+a.show()
