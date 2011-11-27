@@ -1,4 +1,5 @@
 #redFridge - mintyPT
+Keeps track of products in your fridge!
 
 ##About this
 

@@ -53,18 +53,9 @@ class fridge(object):
             self.json[product] = 0
 
 
+# Meant for testing purposes
 def shop(fridge):
     fridge.add('Beer',6)
     fridge.add('Coca Cola 1.5l',1)
     fridge.add('Cheese',1)
 
-
-
-    
-
-
-
-# For testing purposes
-a = fridge()
-a.open()
-a.show()
