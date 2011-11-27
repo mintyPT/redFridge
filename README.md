@@ -24,7 +24,7 @@ This is simply a dict{} containing several keys, your products, and an amount, t
 
 5.  What's next?
 
-    *In your fridge you have:*  
+    **In your fridge you have:**  
     f.show()  
 
     If you need to add 6 beers, no problem:  
