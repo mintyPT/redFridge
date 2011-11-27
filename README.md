@@ -1,4 +1,6 @@
-redFridge - mintyPT
+#redFridge - mintyPT
+
+##About this
 
 I forked this in first place to learn about python, json, etc.
 
@@ -6,7 +8,7 @@ This is simply a dict{} containing several keys, your products, and an amount, t
 
 
 
-How to use this:
+##How to use this:
 
 1)  load the script
     run fridge.py;
