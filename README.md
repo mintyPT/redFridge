@@ -6,18 +6,16 @@ I forked this in first place to learn about python, json, etc.
 
 This is simply a dict{} containing several keys, your products, and an amount, their value.
 
-
-
 ##How to use this:
 
 1.  load the script:  
-*run fridge.py  
+run fridge.py  
 
 2.  pick your fridge:  
-*f = fridge()  
+f = fridge()  
 
 3.  open it:  
-*f.open()  
+f.open()  
 
 4.  use your fridge like a big boy.  
 
