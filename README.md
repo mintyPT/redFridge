@@ -10,19 +10,19 @@ This is simply a dict{} containing several keys, your products, and an amount, t
 
 ##How to use this:
 
-1)  load the script:
-    run fridge.py
+1.  load the script:
+*run fridge.py
 
-2)  pick your fridge:
-    f = fridge()
+2.  pick your fridge:
+*f = fridge()
 
-3)  open it:
-    f.open()
+3.  open it:
+*f.open()
 
-4)  use your fridge like a big boy.
+4.  use your fridge like a big boy.
 
 
-5)  What's next?
+5.  What's next?
 
     In your fridge you have:
     f.show()
@@ -39,6 +39,6 @@ This is simply a dict{} containing several keys, your products, and an amount, t
     To get rid of everything:
     f.clear()
 
-6)  Don't forget to close it after you're done:
+6.  Don't forget to close it after you're done:
     f.close()
 
