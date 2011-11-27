@@ -4,21 +4,20 @@ class fridge(object):
 
     def __init__(self):
         self.json = {}
+        self.filename = "fridge.json"
 
     def open(self):
         try:
-            f = open("fridge.json","r")
+            f = open(self.filename, "r")
             self.json = json.load(f)
             f.close()
         except:
             self.json = {}
     
     def add(self, product, amount):
-        if self.json.has_key(product):
-            self.json[product] += amount
-        else:
+        if self.json.has_key(product) == False:
             self.json.update({product : 0})
-            self.add(product, amount)
+        self.json[product] += amount
 
     def show(self):
         print 'In the fridge, you have:'
@@ -47,9 +46,11 @@ class fridge(object):
     def amountOf(self, product):
         print product, "-->", self.json[product]
 
-    def sub(self, product):
-        if(self.json[product]>=1):
-            self.json[product] -= 1
+    def sub(self, product, amount):
+        if(self.json[product]>=amount):
+            self.json[product] -= amount
+        else:
+            self.json[product] = 0
 
 
 def shop(fridge):
