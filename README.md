@@ -10,13 +10,13 @@ This is simply a dict{} containing several keys, your products, and an amount, t
 
 ##How to use this:
 
-1)  load the script
-    run fridge.py;
+1)  load the script:
+    run fridge.py
 
-2)  pick your fridge
+2)  pick your fridge:
     f = fridge()
 
-3)  open it
+3)  open it:
     f.open()
 
 4)  use your fridge like a big boy.
