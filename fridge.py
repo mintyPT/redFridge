@@ -59,3 +59,11 @@ def shop(fridge):
     fridge.add('Coca Cola 1.5l',1)
     fridge.add('Cheese',1)
 
+
+
+
+
+
+
+
+
