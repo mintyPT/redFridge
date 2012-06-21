@@ -1,12 +1,11 @@
 import json
 
-class fridge(object):
+class redFridge(object):
 
-    def __init__(self):
-        self.json = {}
-        self.filename = "fridge.json"
+    json = {}
 
-    def open(self):
+    def __init__(self, filename="fridge.json"):
+        self.filename = filename
         try:
             f = open(self.filename, "r")
             self.json = json.load(f)
@@ -51,19 +50,3 @@ class fridge(object):
             self.json[product] -= amount
         else:
             self.json[product] = 0
-
-
-# Meant for testing purposes
-def shop(fridge):
-    fridge.add('Beer',6)
-    fridge.add('Coca Cola 1.5l',1)
-    fridge.add('Cheese',1)
-
-
-
-
-
-
-
-
-
